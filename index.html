@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flat calc</title>
+</head>
+<body>
+
+    <form>
+        <input class="j-form-name" type="text" name="name" placeholder="Ваше Имя">
+        <input class="j-form-cost" type="text" name="cost" placeholder="Стоимость">
+        <input class="j-form-investments" type="text" name="investments" placeholder="Количество инвестиций">
+
+        <div class="j-count">
+            Расчитать
+        </div>
+    </form>
+
+    <div class="j-result main">
+        <div class="main__text">
+            <span class="j-text-name"></span>, при внесении ежемесячно по <span class="j-text-investments"></span>$ вы приобретёте квартиру своей мечты за <span class="j-text-period"></span>
+        </div>
+
+        <table class="main__table">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Внесено</td>
+                    <td>Заработано</td>
+                    <td>Проценты (10%)</td>
+                    <td>Накоплено</td>
+                </tr>
+            </thead>
+            <tbody class="j-table-body">
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/calc.js"></script>
+</body>
+</html>
