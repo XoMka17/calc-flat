@@ -39,7 +39,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     background: rgba(50,200,50,0.08);
 
     @media (max-width: $width_phone) {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
     }
 
     &.is-active {
@@ -81,7 +81,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   transition: all 0.2s;
 
   @media (max-width: $width_phone) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   &:hover {
@@ -100,7 +100,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     text-align: center;
 
     @media (max-width: $width_phone) {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
   }
 
@@ -127,7 +127,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     text-align: center;
 
     @media (max-width: $width_phone) {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
   }
 }
@@ -149,7 +149,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
     @media (max-width: $width_phone) {
       width: 50%;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -176,7 +176,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
       font-weight: 600;
 
       @media (max-width: $width_phone) {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       &::placeholder {
@@ -187,7 +187,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
         opacity: 0.5;
 
         @media (max-width: $width_phone) {
-          font-size: 0.9rem;
+          font-size: 1.1rem;
         }
       }
     }
@@ -200,7 +200,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     font-size: 16px;
 
     @media (max-width: $width_phone) {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     span {
@@ -208,7 +208,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
       font-weight: 600;
 
       @media (max-width: $width_phone) {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -241,7 +241,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
     @media (max-width: $width_phone) {
       padding: 4px 2px;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
