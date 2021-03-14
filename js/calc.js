@@ -1,53 +1,105 @@
-$('.j-result').hide();
+$('.j-section-2').hide();
+$('.j-section-3').hide();
 
-$('.j-count').click(function () {
-    $('.j-result').show();
+var money_for_one_square = 1200;
+var table_body = $('.j-table-body');
 
-    $('.j-text-name').html($('.j-form-name').val());
+$('.j-open-group-1').click(function () {
+    $('.j-section-1').hide();
+    $('.j-section-2').show();
+
+    $('.j-way-line-1').addClass('is-active');
+    $('.j-way-point-2').addClass('is-active');
+
+    $('.j-group-2').hide();
+    $('.j-group-1').show();
+});
+
+$('.j-open-group-2').click(function () {
+    $('.j-section-1').hide();
+    $('.j-section-2').show();
+
+    $('.j-way-line-1').addClass('is-active');
+    $('.j-way-point-2').addClass('is-active');
+
+    $('.j-group-1').hide();
+    $('.j-group-2').show();
+});
+
+
+
+$('.j-count-1').click(function () {
+    if(!$('.j-form-name').val().trim() || !$('.j-form-cost').val() || !$('.j-form-investments').val()) {
+        alert('Для подсчёта нужно заполнить все поля');
+        return -1;
+    }
+
+    $('.j-way-line-2').addClass('is-active');
+    $('.j-way-point-3').addClass('is-active');
+
+    table_body.html('');
+    $('.j-section-2').hide();
+    $('.j-section-3').show();
+
+    $('.j-text-name').html($('.j-form-name').val().trim());
+
+    var flat_cost = $('.j-form-cost').val();
 
     var investments = $('.j-form-investments').val();
     $('.j-text-investments').html(investments);
 
-
     var current_year = new Date().getFullYear();
-    var table_body = $('.j-table-body');
-    table_body.html('');
-    var counter = 1;
-    var amount_by_user = 0;
-    var amount_for_squar = 0;
-    var percent = 0;
-    var total_amount = 0;
+
+    var counter = 0;
+
+    var money_for_square = 0;
+    var total = 0;
+
+    var money_all = [];
 
     do {
 
-        amount_by_user = investments * 12;
+        money_all[counter] = {};
+        money_all[counter]['percent'] = 0;
+        money_all[counter]['user_money'] = investments * 12;
 
-        if(amount_by_user >= 1200) {
-            amount_for_squar = (amount_by_user/1200).toFixed(0) * 100;
+        money_for_square += money_all[counter]['user_money'];
+
+        if(money_for_square >= money_for_one_square) {
+            var cof = Math.floor(money_for_square/money_for_one_square);
+            money_all[counter]['money_per_square'] = cof * 100;
+
+            money_for_square -= money_for_one_square * cof;
         }
         else {
-            amount_by_user = 0;
+            money_all[counter]['money_per_square'] = 0;
         }
 
-        percent = (total_amount * 0.1);
-        total_amount += amount_by_user + percent;
+        var user_money_plus_percent = 0;
+        for(var i = 1; i <= counter; i++) {
+            user_money_plus_percent += money_all[i]['user_money'] + money_all[i]['percent'];
+        }
+
+        money_all[counter]['percent'] = Math.round(user_money_plus_percent * 0.1);
+
+        money_all[counter]['total'] = Math.round(money_all[counter]['user_money'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
 
 
+        total += money_all[counter]['total'];
 
-        table_body.append('<tr>');
-
-        table_body.append('<td>' + counter + ' год (' + current_year + ')</td>');
-        table_body.append('<td>' + amount_by_user.toLocaleString('ru') + '$</td>');
-        table_body.append('<td>' + amount_for_squar + '$</td>');
-        table_body.append('<td>' + percent.toLocaleString('ru') + '$</td>');
-        table_body.append('<td>' + (total_amount).toLocaleString('ru') + '$</td>');
-
-        table_body.append('</tr>');
+        table_body.append('<tr>' +
+            '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
+            '<td>' + money_all[counter]['user_money'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['percent'].toLocaleString('ru') + '$</td>' +
+            '<td>' + total.toLocaleString('ru') + '$</td>' +
+            '</tr>'
+        );
 
         counter++;
-    } while (counter < 6);
+    } while (total <= flat_cost);
 
-    var period = ($('.j-form-cost').val() / (investments * 12)).toFixed(1);
+    var period = counter;
     var period_text = period;
 
     if(period == 1) {
@@ -62,3 +114,151 @@ $('.j-count').click(function () {
 
     $('.j-text-period').html(period_text);
 });
+
+
+$('.j-count-2').click(function () {
+    if(!$('.j-form-name').val().trim() || !$('.j-form-cost').val() || !$('.j-form-period').val()) {
+        alert('Для подсчёта нужно заполнить все поля');
+        return -1;
+    }
+
+    $('.j-way-line-2').addClass('is-active');
+    $('.j-way-point-3').addClass('is-active');
+
+    table_body.html('');
+    $('.j-section-2').hide();
+    $('.j-section-3').show();
+
+    $('.j-text-name').html($('.j-form-name').val().trim());
+
+    var flat_cost = $('.j-form-cost').val();
+
+    var period = $('.j-form-period').val();
+    var period_text = period;
+
+    if(period == 1) {
+        period_text = period + ' год';
+    }
+    else if(period < 1 || (period > 1 && period < 5)) {
+        period_text = period + ' года';
+    }
+    else if( period >= 5) {
+        period_text = period + ' лет';
+    }
+    $('.j-text-period').html(period_text);
+
+
+    var current_year = new Date().getFullYear();
+
+
+    var money_for_square = 0;
+    var total = 0;
+
+    var money_all = [];
+
+    var investments = 0;
+    var mistake = 0;
+
+    var is_ready = false;
+
+
+    do {
+        money_for_square = 0;
+        total = 0;
+
+        money_all = [];
+
+        // Guess investments value
+        // but on the next lap this value will be closer
+        investments = Math.floor(flat_cost/period) - mistake;
+
+        for(var counter = 0; counter < period; counter++) {
+
+            money_all[counter] = {};
+            money_all[counter]['percent'] = 0;
+            money_all[counter]['user_money'] = investments;
+
+            money_for_square += money_all[counter]['user_money'];
+
+            if(money_for_square >= money_for_one_square) {
+                var cof = Math.floor(money_for_square/money_for_one_square);
+                money_all[counter]['money_per_square'] = cof * 100;
+
+                money_for_square -= money_for_one_square * cof;
+            }
+            else {
+                money_all[counter]['money_per_square'] = 0;
+            }
+
+            var user_money_plus_percent = 0;
+            for(var i = 1; i <= counter; i++) {
+                user_money_plus_percent += money_all[i]['user_money'] + money_all[i]['percent'];
+            }
+
+            money_all[counter]['percent'] = Math.round(user_money_plus_percent * 0.1);
+
+            money_all[counter]['total'] = Math.round(money_all[counter]['user_money'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
+            total += money_all[counter]['total'];
+        }
+
+        console.log(investments);
+        if(flat_cost < total) {
+            mistake += 10;
+
+            if(is_ready == true) {
+                break;
+            }
+        }
+        else if(flat_cost == total) {
+            break;
+        }
+        else {
+            mistake--;
+            is_ready = true;
+        }
+    } while(true);
+
+    total = 0;
+    for(var counter = 0; counter < period; counter++) {
+        total += money_all[counter]['total'];
+
+        table_body.append('<tr>' +
+            '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
+            '<td>' + money_all[counter]['user_money'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['percent'].toLocaleString('ru') + '$</td>' +
+            '<td>' + total.toLocaleString('ru') + '$</td>' +
+            '</tr>'
+        );
+    }
+
+    $('.j-text-investments').html(investments.toLocaleString('ru'));
+});
+
+
+$('.j-repeat').click(function () {
+    $('.j-way-line-1').removeClass('is-active');
+    $('.j-way-point-2').removeClass('is-active');
+    $('.j-way-line-2').removeClass('is-active');
+    $('.j-way-point-3').removeClass('is-active');
+
+    table_body.html('');
+    $('.j-section-1').show();
+    $('.j-section-2').hide();
+    $('.j-section-3').hide();
+
+    $('.j-section-2 form input').val('');
+});
+
+
+$('.j-contact-form').hide();
+$('.j-open-contact-form').click(function () {
+    $('.j-contact-form').show();
+    $('html').css('overflow','hidden');
+});
+
+$('.j-close-contact-form').click(function () {
+    $('.j-contact-form').hide();
+    $('html').css('overflow','auto');
+});
+

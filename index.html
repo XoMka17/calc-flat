@@ -1,28 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Flat calc</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <form>
-        <input class="j-form-name" type="text" name="name" placeholder="Ваше Имя">
-        <input class="j-form-cost" type="text" name="cost" placeholder="Стоимость">
-        <input class="j-form-investments" type="text" name="investments" placeholder="Количество инвестиций">
-
-        <div class="j-count">
-            Расчитать
+    <div class="nzr-calc-container">
+        <div class="nzr-calc-way">
+            <div class="j-way-point-1 nzr-calc-way__point is-active">
+                1
+            </div>
+            <div class="j-way-line-1 nzr-calc-way__line"></div>
+            <div class="j-way-point-2 nzr-calc-way__point">
+                2
+            </div>
+            <div class="j-way-line-2 nzr-calc-way__line"></div>
+            <div class="j-way-point-3 nzr-calc-way__point">
+                3
+            </div>
         </div>
-    </form>
 
-    <div class="j-result main">
-        <div class="main__text">
-            <span class="j-text-name"></span>, при внесении ежемесячно по <span class="j-text-investments"></span>$ вы приобретёте квартиру своей мечты за <span class="j-text-period"></span>
+        <div class="j-section-1 nzr-calc-section-1">
+            <div class="nzr-calc-section-1__title">
+                Калькулятор пенсионно-инвестиционного фонда "Квартира за год"
+            </div>
+
+            <div class="nzr-calc-section-1__buttons">
+                <div class="j-open-group-1 nzr-calc-button">За сколько лет я куплю квартиру внося по ... долларов?</div>
+                <div class="j-open-group-2 nzr-calc-button">Сколько денег нужно вносить, чтобы купить за ... года?</div>
+            </div>
         </div>
 
-        <table class="main__table">
-            <thead>
+
+        <div class="j-section-2 nzr-calc-section-2">
+            <div class="nzr-calc-section-2__text">
+                Пожалуйста, дайте ответы на вопросы:
+            </div>
+
+            <form class="nzr-calc-form" action="#">
+                <div class="nzr-calc-form__row">
+                    <div class="nzr-calc-form__input-title">
+                        Ваше Имя
+                    </div>
+
+                    <div class="nzr-calc-form__input-filed">
+                        <input class="j-form-name" type="text" name="name" placeholder="Имя">
+                    </div>
+                </div>
+
+                <div class="nzr-calc-form__row">
+                    <div class="nzr-calc-form__input-title">
+                        Стоимость квартиры вашей мечты (в $) ?
+                    </div>
+
+                    <div class="nzr-calc-form__input-filed">
+                        <input class="j-form-cost" type="number" name="cost" placeholder="$">
+                    </div>
+                </div>
+
+
+                <div class="j-group-1">
+                    <div class="nzr-calc-form__row">
+                        <div class="nzr-calc-form__input-title">
+                            Какую сумму вы можете вносить каждый месяц на покупку квартиры своей мечты (в $) ?
+                        </div>
+
+                        <div class="nzr-calc-form__input-filed">
+                            <input class="j-form-investments" type="number" name="investments" placeholder="$">
+                        </div>
+                    </div>
+
+                    <div class="nzr-calc-form__row">
+                        <div class="j-count-1 nzr-calc-button">
+                            Расчитать
+                        </div>
+                    </div>
+                </div>
+
+                <div class="j-group-2">
+                    <div class="nzr-calc-form__row">
+                        <div class="nzr-calc-form__input-title">
+                            За сколько лет вы хотите приобрести квартиру своей мечты (в годах) ?
+                        </div>
+
+                        <div class="nzr-calc-form__input-filed">
+                            <input class="j-form-period" type="number" name="investments" placeholder="лет">
+                        </div>
+                    </div>
+
+                    <div class="nzr-calc-form__row">
+                        <div class="j-count-2 nzr-calc-button">
+                            Расчитать
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="j-section-3 nzr-calc-section-3">
+            <div class="j-group-1 nzr-calc-section-3__text">
+                <span class="j-text-name"></span>, при внесении ежемесячно по <span class="j-text-investments"></span>$ вы приобретёте квартиру своей мечты за <span class="j-text-period"></span>
+            </div>
+
+            <div class="j-group-2 nzr-calc-section-3__text">
+                <span class="j-text-name"></span>, чтобы купить квартиру вашей мечты за <span class="j-text-period"></span> вам необходимо ежемесячно вносить по <span class="j-text-investments"></span> $
+            </div>
+
+
+            <div class="nzr-calc-section-3__text">
+                С накоплениями по годам вы можете ознакомиться в таблице: (таблица показывает что происходит в каждый год)
+            </div>
+
+            <table class="nzr-calc-table">
+                <thead>
                 <tr>
                     <td></td>
                     <td>Внесено</td>
@@ -30,10 +126,43 @@
                     <td>Проценты (10%)</td>
                     <td>Накоплено</td>
                 </tr>
-            </thead>
-            <tbody class="j-table-body">
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="j-table-body">
+                </tbody>
+            </table>
+
+
+            <div class="nzr-calc-section-3__text">
+                Где,
+            </div>
+
+            <div class="nzr-calc-section-3__text">
+                <span>*Внесла</span> - деньги, которые Людмила внесла в течение года, выплачивая новые метры равными частями каждый месяц<br/>
+                <span>*Заработала</span> - Людмила каждый раз вносит деньги в дом, который находится на стадии фундамента и метр стоит дешевле. За год каждый метр дорожает минимум на 100 дол от начальной стоимости<br/>
+                <span>*Проценты</span> - деньги, которые Людмила инвестирует находятся в арендном бизнесе и приносят от 10 процентов годовых в валюте каждый год<br/>
+                <span>*Накоплено</span> - общая сумма денег каждый год, которая накапливается по 3 направлениях
+            </div>
+
+            <div class="nzr-calc-section-3__buttons">
+                <div class="j-repeat nzr-calc-button">
+                    Рассчитать еще раз по другим данным
+                </div>
+                <div class="j-open-contact-form nzr-calc-button">
+                    Связаться с менеджером для уточнения деталей
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="j-contact-form nzr-calc-contact">
+        <div class="j-close-contact-form nzr-calc-contact__bg"></div>
+
+        <div class="nzr-calc-contact__box">
+            <div class="j-close-contact-form nzr-calc-contact__close"></div>
+
+            <script>!function(a,m,o,c,r,m){a[o+c]=a[o+c]||{setMeta:function(p){this.params=(this.params||[]).concat([p])}},a[o+r]=a[o+r]||function(f){a[o+r].f=(a[o+r].f||[]).concat([f])},a[o+r]({id:"750049",hash:"ece3751bf2a77576803af9a865e23c6f",locale:"ru"})}(window,0,"amo_forms_","params","load");</script>
+            <script id="amoforms_script_750049" async="async" charset="utf-8" src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1615723991"></script>
+        </div>
     </div>
 
 
