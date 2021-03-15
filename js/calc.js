@@ -201,7 +201,6 @@ $('.j-count-2').click(function () {
             total += money_all[counter]['total'];
         }
 
-        console.log(investments);
         if(flat_cost < total) {
             mistake += 10;
 
@@ -232,7 +231,7 @@ $('.j-count-2').click(function () {
         );
     }
 
-    $('.j-text-investments').html(investments.toLocaleString('ru'));
+    $('.j-text-investments').html(Math.floor(investments/12).toLocaleString('ru'));
 });
 
 
