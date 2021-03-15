@@ -52,7 +52,6 @@ $('.j-count-1').click(function () {
 
     var counter = 0;
 
-    var money_for_square = 0;
     var total = 0;
 
     var money_all = [];
@@ -63,17 +62,7 @@ $('.j-count-1').click(function () {
         money_all[counter]['percent'] = 0;
         money_all[counter]['user_money'] = investments * 12;
 
-        money_for_square += money_all[counter]['user_money'];
-
-        if(money_for_square >= money_for_one_square) {
-            var cof = Math.floor(money_for_square/money_for_one_square);
-            money_all[counter]['money_per_square'] = cof * 100;
-
-            money_for_square -= money_for_one_square * cof;
-        }
-        else {
-            money_all[counter]['money_per_square'] = 0;
-        }
+        money_all[counter]['money_per_square'] = Math.round(money_all[counter]['user_money']/12);
 
         var user_money_plus_percent = 0;
         for(var i = 1; i <= counter; i++) {
@@ -150,10 +139,7 @@ $('.j-count-2').click(function () {
 
     var current_year = new Date().getFullYear();
 
-
-    var money_for_square = 0;
     var total = 0;
-
     var money_all = [];
 
     var investments = 0;
@@ -178,17 +164,7 @@ $('.j-count-2').click(function () {
             money_all[counter]['percent'] = 0;
             money_all[counter]['user_money'] = investments;
 
-            money_for_square += money_all[counter]['user_money'];
-
-            if(money_for_square >= money_for_one_square) {
-                var cof = Math.floor(money_for_square/money_for_one_square);
-                money_all[counter]['money_per_square'] = cof * 100;
-
-                money_for_square -= money_for_one_square * cof;
-            }
-            else {
-                money_all[counter]['money_per_square'] = 0;
-            }
+            money_all[counter]['money_per_square'] = Math.round(money_all[counter]['user_money']/12);
 
             var user_money_plus_percent = 0;
             for(var i = 1; i <= counter; i++) {
