@@ -223,7 +223,7 @@ $('.j-count-2').click(function () {
 
         table_body.append('<tr>' +
             '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
-            '<td>' + money_all[counter]['user_money'].toLocaleString('ru') + '$</td>' +
+            '<td>' + Math.ceil(money_all[counter]['user_money']/12).toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['percent'].toLocaleString('ru') + '$</td>' +
             '<td>' + total.toLocaleString('ru') + '$</td>' +
@@ -231,7 +231,7 @@ $('.j-count-2').click(function () {
         );
     }
 
-    $('.j-text-investments').html(Math.ceil(investments/12).toLocaleString('ru'));
+    $('.j-text-investments').html(investments.toLocaleString('ru'));
 });
 
 
