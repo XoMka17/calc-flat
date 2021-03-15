@@ -231,7 +231,7 @@ $('.j-count-2').click(function () {
         );
     }
 
-    $('.j-text-investments').html(Math.floor(investments/12).toLocaleString('ru'));
+    $('.j-text-investments').html(Math.ceil(investments/12).toLocaleString('ru'));
 });
 
 
