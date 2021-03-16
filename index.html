@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Flat calc</title>
+    <title>Калькулятор фонда</title>
 
+    <link rel="shortcut icon" href="img/imx.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Laila:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -12,6 +13,10 @@
 <body>
 
     <div class="nzr-calc-container">
+
+        <div class="nzr-calc-logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
         <div class="nzr-calc-way">
             <div class="j-way-point-1 nzr-calc-way__point is-active">
                 1
@@ -32,8 +37,8 @@
             </div>
 
             <div class="nzr-calc-section-1__buttons">
-                <div class="j-open-group-1 nzr-calc-button">За сколько лет я куплю квартиру внося по ... долларов?</div>
-                <div class="j-open-group-2 nzr-calc-button">Сколько денег нужно вносить, чтобы купить за ... года?</div>
+                <div class="j-open-group-1 nzr-calc-button">За сколько лет я куплю квартиру внося по <span>N</span> долларов?</div>
+                <div class="j-open-group-2 nzr-calc-button">Сколько денег нужно вносить, чтобы купить за <span>N</span> лет?</div>
             </div>
         </div>
 
@@ -78,7 +83,7 @@
 
                     <div class="nzr-calc-form__row">
                         <div class="j-count-1 nzr-calc-button">
-                            Расчитать
+                            Рассчитать
                         </div>
                     </div>
                 </div>
@@ -96,7 +101,7 @@
 
                     <div class="nzr-calc-form__row">
                         <div class="j-count-2 nzr-calc-button">
-                            Расчитать
+                            Рассчитать
                         </div>
                     </div>
                 </div>
@@ -114,14 +119,15 @@
 
 
             <div class="nzr-calc-section-3__text">
-                С накоплениями по годам вы можете ознакомиться в таблице: (таблица показывает что происходит в каждый год)
+                С накоплениями по годам вы можете ознакомиться в таблице (таблица показывает что происходит в каждый год):
             </div>
 
             <table class="nzr-calc-table">
                 <thead>
                 <tr>
-                    <td></td>
-                    <td>Внесено за месяц</td>
+                    <td>Год</td>
+                    <td>Внесено в месяц</td>
+                    <td>Внесено в год</td>
                     <td>Заработано</td>
                     <td>Проценты (10%)</td>
                     <td>Накоплено</td>
@@ -137,9 +143,9 @@
             </div>
 
             <div class="nzr-calc-section-3__text">
-                <span>*Внесла</span> - деньги, которые Людмила внесла в течение года, выплачивая новые метры равными частями каждый месяц<br/>
-                <span>*Заработала</span> - Людмила каждый раз вносит деньги в дом, который находится на стадии фундамента и метр стоит дешевле. За год каждый метр дорожает минимум на 100 дол от начальной стоимости<br/>
-                <span>*Проценты</span> - деньги, которые Людмила инвестирует находятся в арендном бизнесе и приносят от 10 процентов годовых в валюте каждый год<br/>
+                <span>*Внесла</span> - деньги, которые вы внесете в течение года, выплачивая новые метры равными частями каждый месяц<br/>
+                <span>*Заработала</span> - каждый раз вы вносите деньги в дом, который находится на стадии фундамента и метр стоит дешевле. За год каждый метр дорожает минимум на 100 дол от начальной стоимости<br/>
+                <span>*Проценты</span> - каждый квадратный метр после строительства и ремонта сдается в аренду и приносит от 10 процентов годовых в валюте каждый год<br/>
                 <span>*Накоплено</span> - общая сумма денег каждый год, которая накапливается по 3 направлениях
             </div>
 

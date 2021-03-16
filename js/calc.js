@@ -60,25 +60,27 @@ $('.j-count-1').click(function () {
 
         money_all[counter] = {};
         money_all[counter]['percent'] = 0;
-        money_all[counter]['user_money'] = investments * 12;
+        money_all[counter]['user_money_month'] = investments;
+        money_all[counter]['user_money_year'] = investments * 12;
 
-        money_all[counter]['money_per_square'] = Math.round(money_all[counter]['user_money']/12);
+        money_all[counter]['money_per_square'] = Math.round(money_all[counter]['user_money_year']/12);
 
-        var user_money_plus_percent = 0;
+        var user_money_year_plus_percent = 0;
         for(var i = 1; i <= counter; i++) {
-            user_money_plus_percent += money_all[i]['user_money'] + money_all[i]['percent'];
+            user_money_year_plus_percent += money_all[i]['user_money_year'] + money_all[i]['percent'];
         }
 
-        money_all[counter]['percent'] = Math.round(user_money_plus_percent * 0.1);
+        money_all[counter]['percent'] = Math.round(user_money_year_plus_percent * 0.1);
 
-        money_all[counter]['total'] = Math.round(money_all[counter]['user_money'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
+        money_all[counter]['total'] = Math.round(money_all[counter]['user_money_year'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
 
 
         total += money_all[counter]['total'];
 
         table_body.append('<tr>' +
             '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
-            '<td>' + money_all[counter]['user_money'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['user_money_month'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['user_money_year'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['percent'].toLocaleString('ru') + '$</td>' +
             '<td>' + total.toLocaleString('ru') + '$</td>' +
@@ -162,18 +164,18 @@ $('.j-count-2').click(function () {
 
             money_all[counter] = {};
             money_all[counter]['percent'] = 0;
-            money_all[counter]['user_money'] = investments;
+            money_all[counter]['user_money_year'] = investments;
 
-            money_all[counter]['money_per_square'] = Math.round(money_all[counter]['user_money']/12);
+            money_all[counter]['money_per_square'] = Math.round(money_all[counter]['user_money_year']/12);
 
-            var user_money_plus_percent = 0;
+            var user_money_year_plus_percent = 0;
             for(var i = 1; i <= counter; i++) {
-                user_money_plus_percent += money_all[i]['user_money'] + money_all[i]['percent'];
+                user_money_year_plus_percent += money_all[i]['user_money_year'] + money_all[i]['percent'];
             }
 
-            money_all[counter]['percent'] = Math.round(user_money_plus_percent * 0.1);
+            money_all[counter]['percent'] = Math.round(user_money_year_plus_percent * 0.1);
 
-            money_all[counter]['total'] = Math.round(money_all[counter]['user_money'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
+            money_all[counter]['total'] = Math.round(money_all[counter]['user_money_year'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
             total += money_all[counter]['total'];
         }
 
@@ -195,11 +197,13 @@ $('.j-count-2').click(function () {
 
     total = 0;
     for(var counter = 0; counter < period; counter++) {
+        money_all[counter]['user_money_month'] = Math.ceil(money_all[counter]['user_money']/12);
         total += money_all[counter]['total'];
 
         table_body.append('<tr>' +
             '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
-            '<td>' + Math.ceil(money_all[counter]['user_money']/12).toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['user_money_month'].toLocaleString('ru') + '$</td>' +
+            '<td>' + money_all[counter]['user_money_year'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['percent'].toLocaleString('ru') + '$</td>' +
             '<td>' + total.toLocaleString('ru') + '$</td>' +

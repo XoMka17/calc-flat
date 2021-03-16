@@ -1,11 +1,13 @@
 $width_phone: 400px;
 
-$green_active: rgba(50,170,50,0.8);
-$green_light: rgba(50,200,50,0.2);
+$active_color: #ffd900;
+$passive_color: #ffd900a0;
 
 $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
 .nzr-calc-container {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -20,7 +22,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   }
 
   * {
-    font-family: 'Laila', "Gill Sans", sans-serif;
+    font-family: Ubuntu, 'Laila', "Gill Sans", sans-serif;
   }
 }
 
@@ -34,18 +36,18 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   div {
     font-size: 20px;
     font-weight: 600;
-    color: gray;
+    color: white;
 
-    background: rgba(50,200,50,0.08);
+    background: $passive_color;
 
     @media (max-width: $width_phone) {
       font-size: 1.5rem;
     }
 
     &.is-active {
-      color: white;
+      color: #232222;
 
-      background: $green_active;
+      background: $active_color;
     }
   }
 
@@ -65,6 +67,33 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
     margin: auto 0;
   }
+
+
+  @media (max-width: $width_phone) {
+    margin-bottom: 20px;
+  }
+}
+
+.nzr-calc-logo {
+  position: absolute;
+  top: -15px;
+  left: 15px;
+
+  img {
+    max-width: 90px;
+    max-height: 90px;
+
+  }
+
+  @media (max-width: $width_phone) {
+    top: -8px;
+    left: -1px;
+
+    img {
+      max-width: 70px;
+      max-height: 70px;
+    }
+  }
 }
 
 .nzr-calc-button {
@@ -75,8 +104,9 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
   text-align: center;
   cursor: pointer;
+  color: #232222;
 
-  background: $green_light;
+  background: $passive_color;
 
   transition: all 0.2s;
 
@@ -85,9 +115,14 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   }
 
   &:hover {
-    color: white;
-    background: $green_active;
+    text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    background: $active_color;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  span {
+    font-size: inherit;
+    font-weight: 600;
   }
 }
 
@@ -109,6 +144,10 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     justify-content: space-around;
     align-content: flex-start;
 
+    .nzr-calc-button {
+      font-size: 18px;
+    }
+
     @media (max-width: $width_phone) {
       flex-direction: column;
       justify-content: flex-start;
@@ -119,6 +158,9 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
 
 .nzr-calc-section-2 {
+  max-width: 600px;
+  margin: auto;
+
   &__text {
     margin-bottom: 25px;
 
@@ -248,7 +290,8 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   thead {
     td {
       font-weight: 600;
-      background: $green_light;
+      color: white;
+      background: #232222;
     }
   }
 }
