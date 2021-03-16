@@ -200,7 +200,6 @@ $('.j-count-2').click(function () {
         money_all[counter]['user_money_month'] = Math.ceil(money_all[counter]['user_money_year']/12);
         total += money_all[counter]['total'];
 
-        console.log(money_all[counter]['user_money_month']);
         table_body.append('<tr>' +
             '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
             '<td>' + money_all[counter]['user_money_month'].toLocaleString('ru') + '$</td>' +
@@ -241,4 +240,3 @@ $('.j-close-contact-form').click(function () {
     $('.j-contact-form').hide();
     $('html').css('overflow','auto');
 });
-

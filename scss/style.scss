@@ -22,6 +22,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   }
 
   * {
+    font-size: 22px;
     font-family: Ubuntu, 'Laila', "Gill Sans", sans-serif;
   }
 }
@@ -102,6 +103,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   border: 1px solid rgba(200,200,200,0.2);
   border-radius: 5px;
 
+  font-size: 22px;
   text-align: center;
   cursor: pointer;
   color: #232222;
@@ -130,7 +132,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   &__title {
     margin-bottom: 25px;
 
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     text-align: center;
 
@@ -145,7 +147,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     align-content: flex-start;
 
     .nzr-calc-button {
-      font-size: 18px;
+      font-size: 22px;
     }
 
     @media (max-width: $width_phone) {
@@ -164,7 +166,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   &__text {
     margin-bottom: 25px;
 
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     text-align: center;
 
@@ -214,7 +216,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
       border-radius: 5px;
 
       color: black;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
 
       @media (max-width: $width_phone) {
@@ -224,7 +226,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
       &::placeholder {
 
         color: black;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 500;
         opacity: 0.5;
 
@@ -239,7 +241,7 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
 .nzr-calc-section-3 {
   &__text {
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 22px;
 
     @media (max-width: $width_phone) {
       font-size: 1.2rem;
