@@ -1,4 +1,4 @@
-$width_phone: 400px;
+$width_phone: 650px;
 
 $active_color: #ffd900;
 $passive_color: #ffd900a0;
@@ -366,5 +366,28 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     &:before {
       transform: translate(-50%,-50%) rotate(45deg);
     }
+  }
+}
+
+.nzr-calc-table-helper {
+  display: none;
+
+  @media (max-width: $width_phone) {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__text {
+    margin-bottom: -7px;
+
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__img {
+    margin: auto;
+    max-width: 50px;
   }
 }
