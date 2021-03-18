@@ -1,0 +1,33 @@
+.nzr-calc-thanks {
+  position: fixed;
+
+  width: 100%;
+  min-height: 100%;
+
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,217,0,0.25253851540616246) 5%, rgba(255,255,255,1) 100%);
+
+  &__container {
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 100%;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__buttons {
+    margin: 0 auto;
+  }
+}
