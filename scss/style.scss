@@ -164,7 +164,14 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     justify-content: center;
 
     max-width: 100%;
-    margin: 50px auto 0;
+    margin: 20px auto 0;
+
+    overflow: hidden;
+
+    img {
+      max-width: 800px;
+      width: 100%;
+    }
   }
 }
 
