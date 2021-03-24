@@ -5,7 +5,7 @@ $('.j-nzr-lang li').each(function (key) {
 });
 
 // Set default language
-var current_language = 'ua';
+var current_language = getCookie('nzr-lang') ? getCookie('nzr-lang') : 'ua';
 changeLang(current_language);
 
 // Change language, if user click
@@ -22,6 +22,7 @@ $('.j-nzr-lang li').click(function () {
 
 
 function changeLang(new_language) {
+    setCookie('nzr-lang',new_language);
     $('.j-nzr-lang li').each(function () {
         if($(this).attr('data-lang') == new_language) {
             $(this).addClass('is-active');
