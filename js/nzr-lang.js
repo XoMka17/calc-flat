@@ -22,7 +22,7 @@ $('.j-nzr-lang li').click(function () {
 
 
 function changeLang(new_language) {
-    setCookie('nzr-lang',new_language);
+    document.cookie = "nzr-lang=" + new_language;
     $('.j-nzr-lang li').each(function () {
         if($(this).attr('data-lang') == new_language) {
             $(this).addClass('is-active');
