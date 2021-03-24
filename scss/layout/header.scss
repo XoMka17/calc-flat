@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $width_phone) {
+    margin-bottom: 20px;
+  }
+}
+
+.nzr-calc-logo {
+
+  img {
+    max-width: 98px;
+    max-height: 98px;
+
+    @media (max-width: $width_phone) {
+      max-width: 70px;
+      max-height: 70px
+    }
+  }
+}
+
+.nzr-calc-way {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  margin: 10px auto 10px;
+
+  div {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+
+    background: $passive_color;
+
+    @media (max-width: $width_phone) {
+      font-size: 1.5rem;
+    }
+
+    &.is-active {
+      color: #232222;
+
+      background: $active_color;
+    }
+  }
+
+  &__point {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 5px;
+
+    text-align: center;
+    line-height: 30px;
+  }
+
+  &__line {
+    width: 50px;
+    height: 2px;
+
+    margin: auto 0;
+  }
+}
+
+.nzr-calc-lang {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid $active_color;
+    border-radius: 100px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    opacity: 0.6;
+    cursor: pointer;
+
+    transition: all 0.3ms;
+
+    @media (max-width: $width_phone) {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.is-active {
+      opacity: 1;
+      cursor: default;
+
+      @media (max-width: $width_phone) {
+        display: none;
+      }
+    }
+  }
+}

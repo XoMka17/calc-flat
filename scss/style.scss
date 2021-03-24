@@ -5,6 +5,9 @@ $passive_color: #ffd900a0;
 
 $border_light_gray: 1px solid rgba(200,200,200,0.4);
 
+@import "layout/header";
+@import "layout/sections";
+
 .nzr-calc-container {
   position: relative;
 
@@ -22,80 +25,10 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   }
 
   * {
-    font-size: 22px;
     font-family: Ubuntu, 'Laila', "Gill Sans", sans-serif;
   }
 }
 
-.nzr-calc-way {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-
-  margin: 10px auto 40px;
-
-  div {
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
-
-    background: $passive_color;
-
-    @media (max-width: $width_phone) {
-      font-size: 1.5rem;
-    }
-
-    &.is-active {
-      color: #232222;
-
-      background: $active_color;
-    }
-  }
-
-  &__point {
-    width: 30px;
-    height: 30px;
-
-    border-radius: 5px;
-
-    text-align: center;
-    line-height: 30px;
-  }
-
-  &__line {
-    width: 50px;
-    height: 2px;
-
-    margin: auto 0;
-  }
-
-
-  @media (max-width: $width_phone) {
-    margin-bottom: 20px;
-  }
-}
-
-.nzr-calc-logo {
-  position: absolute;
-  top: -15px;
-  left: 15px;
-
-  img {
-    max-width: 90px;
-    max-height: 90px;
-
-  }
-
-  @media (max-width: $width_phone) {
-    top: -8px;
-    left: -1px;
-
-    img {
-      max-width: 70px;
-      max-height: 70px;
-    }
-  }
-}
 
 .nzr-calc-button {
   margin: 5px;
@@ -123,196 +56,9 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
   }
 
-  span {
+  strong {
     font-size: inherit;
     font-weight: 600;
-  }
-}
-
-.nzr-calc-section-1 {
-  &__title {
-    margin-bottom: 25px;
-
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 1.55em;
-    text-align: center;
-
-    @media (max-width: $width_phone) {
-      font-size: 1.3rem;
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
-
-    .nzr-calc-button {
-      font-size: 22px;
-    }
-
-    @media (max-width: $width_phone) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  }
-
-  &__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    max-width: 100%;
-    margin: 20px auto 0;
-
-    overflow: hidden;
-
-    img {
-      max-width: 650px;
-      width: 100%;
-    }
-  }
-}
-
-
-.nzr-calc-section-2 {
-  max-width: 600px;
-  margin: auto;
-
-  &__text {
-    margin-bottom: 25px;
-
-    font-size: 22px;
-    font-weight: 700;
-    text-align: center;
-
-    @media (max-width: $width_phone) {
-      font-size: 1.3rem;
-    }
-  }
-}
-
-.nzr-calc-form {
-
-  &__row {
-    display: flex;
-    align-content: flex-start;
-
-    margin-bottom: 10px;
-  }
-
-  &__input-title {
-    width: 350px;
-
-    box-sizing: border-box;
-    padding-right: 20px;
-
-    @media (max-width: $width_phone) {
-      width: 50%;
-      font-size: 1.2rem;
-    }
-  }
-
-  &__input-filed {
-    @media (max-width: $width_phone) {
-      width: 50%;
-
-      input {
-        width: 100%;
-      }
-    }
-  }
-
-
-  input {
-    &[type='text'], &[type='number'] {
-      min-height: 28px;
-
-      border: $border_light_gray;
-      border-radius: 5px;
-
-      color: black;
-      font-size: 18px;
-      font-weight: 600;
-
-      @media (max-width: $width_phone) {
-        font-size: 1.2rem;
-      }
-
-      &::placeholder {
-
-        color: black;
-        font-size: 15px;
-        font-weight: 500;
-        opacity: 0.5;
-
-        @media (max-width: $width_phone) {
-          font-size: 1.1rem;
-        }
-      }
-    }
-  }
-}
-
-.nzr-calc-section-3 {
-  &__text {
-    margin-bottom: 25px;
-    font-size: 22px;
-
-    @media (max-width: $width_phone) {
-      font-size: 1.2rem;
-    }
-
-    span {
-      font-size: inherit;
-      font-weight: 600;
-
-      @media (max-width: $width_phone) {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
-
-    @media (max-width: $width_phone) {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  }
-}
-
-.nzr-calc-table {
-  border-collapse: collapse;
-  margin-bottom: 40px;
-
-  width: 100%;
-  overflow-x: auto;
-  display: inline-block;
-
-  td {
-    padding: 5px 10px;
-    border: $border_light_gray;
-    text-align: center;
-
-    @media (max-width: $width_phone) {
-      padding: 4px 2px;
-      font-size: 1.2rem;
-    }
-  }
-
-  thead {
-    td {
-      font-weight: 600;
-      color: white;
-      background: #232222;
-    }
   }
 }
 
@@ -387,6 +133,73 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   }
 }
 
+
+
+.nzr-calc-form {
+
+  &__row {
+    display: flex;
+    align-content: flex-start;
+
+    margin-bottom: 10px;
+  }
+
+  &__input-title {
+    width: 350px;
+
+    box-sizing: border-box;
+    padding-right: 20px;
+
+    font-size: 22px;
+
+    @media (max-width: $width_phone) {
+      width: 50%;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__input-filed {
+    @media (max-width: $width_phone) {
+      width: 50%;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+
+  input {
+    &[type='text'], &[type='number'] {
+      min-height: 28px;
+
+      border: $border_light_gray;
+      border-radius: 5px;
+
+      color: black;
+      font-size: 18px;
+      font-weight: 600;
+
+      @media (max-width: $width_phone) {
+        font-size: 1.2rem;
+      }
+
+      &::placeholder {
+
+        color: black;
+        font-size: 15px;
+        font-weight: 500;
+        opacity: 0.5;
+
+        @media (max-width: $width_phone) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+
 .nzr-calc-table-helper {
   display: none;
 
@@ -407,5 +220,36 @@ $border_light_gray: 1px solid rgba(200,200,200,0.4);
   &__img {
     margin: auto;
     max-width: 50px;
+  }
+}
+
+.nzr-calc-table {
+  border-collapse: collapse;
+  margin-bottom: 40px;
+
+  width: 100%;
+  overflow-x: auto;
+  display: inline-block;
+
+  td {
+    padding: 5px 10px;
+    border: $border_light_gray;
+
+    font-size: 22px;
+    text-align: center;
+
+    @media (max-width: $width_phone) {
+      padding: 4px 2px;
+      font-size: 1.2rem;
+    }
+  }
+
+  thead {
+    td {
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      background: #232222;
+    }
   }
 }

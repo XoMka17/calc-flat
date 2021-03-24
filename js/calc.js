@@ -30,7 +30,12 @@ $('.j-open-group-2').click(function () {
 
 $('.j-count-1').click(function () {
     if(!$('.j-form-name').val().trim() || !$('.j-form-cost').val() || !$('.j-form-investments').val()) {
-        alert('Для подсчёта нужно заполнить все поля');
+        if(current_language == 'ua'){
+            alert('Для підрахунку потрібно заповнити всі поля');
+        }
+        else {
+            alert('Для подсчёта нужно заполнить все поля');
+        }
         return -1;
     }
 
@@ -57,7 +62,6 @@ $('.j-count-1').click(function () {
     var money_all = [];
 
     do {
-
         money_all[counter] = {};
         money_all[counter]['percent'] = 0;
         money_all[counter]['user_money_month'] = investments;
@@ -74,11 +78,12 @@ $('.j-count-1').click(function () {
 
         money_all[counter]['total'] = Math.round(money_all[counter]['user_money_year'] + money_all[counter]['percent'] + money_all[counter]['money_per_square']);
 
-
         total += money_all[counter]['total'];
 
+
+
         table_body.append('<tr>' +
-            '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
+            '<td>' + getNumberWithYearByNumber(counter + 1) + ' (' + (current_year + counter) + ')</td>' +
             '<td>' + money_all[counter]['user_money_month'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['user_money_year'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
@@ -91,25 +96,19 @@ $('.j-count-1').click(function () {
     } while (total <= flat_cost);
 
     var period = counter;
-    var period_text = period;
-
-    if(period == 1) {
-        period_text = period + ' год';
-    }
-    else if(period < 1 || (period > 1 && period < 5)) {
-        period_text = period + ' года';
-    }
-    else if( period >= 5) {
-        period_text = period + ' лет';
-    }
-
-    $('.j-text-period').html(period_text);
+    $('.j-text-period').html(getNumberWithYearByNumber(period));
 });
 
 
 $('.j-count-2').click(function () {
     if(!$('.j-form-name').val().trim() || !$('.j-form-cost').val() || !$('.j-form-period').val()) {
-        alert('Для подсчёта нужно заполнить все поля');
+
+        if(current_language == 'ua'){
+            alert('Для підрахунку потрібно заповнити всі поля');
+        }
+        else {
+            alert('Для подсчёта нужно заполнить все поля');
+        }
         return -1;
     }
 
@@ -125,18 +124,7 @@ $('.j-count-2').click(function () {
     var flat_cost = $('.j-form-cost').val();
 
     var period = $('.j-form-period').val();
-    var period_text = period;
-
-    if(period == 1) {
-        period_text = period + ' год';
-    }
-    else if(period < 1 || (period > 1 && period < 5)) {
-        period_text = period + ' года';
-    }
-    else if( period >= 5) {
-        period_text = period + ' лет';
-    }
-    $('.j-text-period').html(period_text);
+    $('.j-text-period').html(getNumberWithYearByNumber(period));
 
 
     var current_year = new Date().getFullYear();
@@ -201,7 +189,7 @@ $('.j-count-2').click(function () {
         total += money_all[counter]['total'];
 
         table_body.append('<tr>' +
-            '<td>' + (counter + 1) + ' год (' + (current_year + counter) + ')</td>' +
+            '<td>' + getNumberWithYearByNumber(counter + 1) + ' (' + (current_year + counter) + ')</td>' +
             '<td>' + money_all[counter]['user_money_month'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['user_money_year'].toLocaleString('ru') + '$</td>' +
             '<td>' + money_all[counter]['money_per_square'].toLocaleString('ru') + '$</td>' +
@@ -240,3 +228,34 @@ $('.j-close-contact-form').click(function () {
     $('.j-contact-form').hide();
     $('html').css('overflow','auto');
 });
+
+
+function getNumberWithYearByNumber(period) {
+    var period_text = period;
+    if(period == 1) {
+        if(current_language == 'ua'){
+            period_text = period + ' <span data-lang-element="ua" style="display: block">рік</span><span data-lang-element="ru" style="display: none">год</span>';
+        }
+        else {
+            period_text = period + ' <span data-lang-element="ua" style="display: none">рік</span><span data-lang-element="ru" style="display: block">год</span>';
+        }
+    }
+    else if(period < 1 || (period > 1 && period < 5)) {
+        if(current_language == 'ua'){
+            period_text = period + ' <span data-lang-element="ua" style="display: block">роки</span><span data-lang-element="ru" style="display: none">года</span>';
+        }
+        else {
+            period_text = period + ' <span data-lang-element="ua" style="display: none">роки</span><span data-lang-element="ru" style="display: block">года</span>';
+        }
+    }
+    else if( period >= 5) {
+        if(current_language == 'ua'){
+            period_text = period + ' <span data-lang-element="ua" style="display: block">років</span><span data-lang-element="ru" style="display: none">лет</span>';
+        }
+        else {
+            period_text = period + ' <span data-lang-element="ua" style="display: none">років</span><span data-lang-element="ru" style="display: block">лет</span>';
+        }
+    }
+
+    return period_text;
+}

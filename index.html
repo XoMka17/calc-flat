@@ -14,31 +14,47 @@
 
     <div class="nzr-calc-container">
 
-        <div class="nzr-calc-logo">
-            <img src="img/logo.png" alt="logo">
-        </div>
-        <div class="nzr-calc-way">
-            <div class="j-way-point-1 nzr-calc-way__point is-active">
-                1
+        <header class="header">
+            <div class="nzr-calc-logo">
+                <img src="img/logo.png" alt="logo">
             </div>
-            <div class="j-way-line-1 nzr-calc-way__line"></div>
-            <div class="j-way-point-2 nzr-calc-way__point">
-                2
+            <div class="nzr-calc-way">
+                <div class="j-way-point-1 nzr-calc-way__point is-active">
+                    1
+                </div>
+                <div class="j-way-line-1 nzr-calc-way__line"></div>
+                <div class="j-way-point-2 nzr-calc-way__point">
+                    2
+                </div>
+                <div class="j-way-line-2 nzr-calc-way__line"></div>
+                <div class="j-way-point-3 nzr-calc-way__point">
+                    3
+                </div>
             </div>
-            <div class="j-way-line-2 nzr-calc-way__line"></div>
-            <div class="j-way-point-3 nzr-calc-way__point">
-                3
-            </div>
-        </div>
+            <ul class="j-nzr-lang nzr-calc-lang__list">
+                <li class="nzr-calc-lang__item" data-lang="ua">UA</li>
+                <li class="nzr-calc-lang__item" data-lang="ru">RU</li>
+            </ul>
+        </header>
+
 
         <div class="j-section-1 nzr-calc-section-1">
             <div class="nzr-calc-section-1__title">
-                Калькулятор пенсионно-инвестиционного фонда <br>"Квартира за год"
+                <span data-lang-element="ua">Калькулятор пенсійно-інвестиційного фонду <br> "Квартира за рік"
+</span>
+                <span data-lang-element="ru">Калькулятор пенсионно-инвестиционного фонда <br>"Квартира за год"</span>
             </div>
 
             <div class="nzr-calc-section-1__buttons">
-                <div class="j-open-group-1 nzr-calc-button">За сколько лет я куплю квартиру внося по <span>N</span> долларов?</div>
-                <div class="j-open-group-2 nzr-calc-button">Сколько денег нужно вносить, чтобы купить за <span>N</span> лет?</div>
+                <div class="j-open-group-1 nzr-calc-button">
+                    <span data-lang-element="ua">За скільки років я куплю квартиру, вносячи по <strong>N</strong> доларів?</span>
+                    <span data-lang-element="ru">За сколько лет я куплю квартиру внося по <strong>N</strong> долларов?</span>
+                </div>
+
+                <div class="j-open-group-2 nzr-calc-button">
+                    <span data-lang-element="ua">Скільки грошей потрібно вносити, щоб купити за <strong>N</strong> років?</span>
+                    <span data-lang-element="ru">Сколько денег нужно вносить, чтобы купить за <strong>N</strong> лет?</span>
+                </div>
             </div>
 
             <div class="nzr-calc-section-1__img">
@@ -46,26 +62,28 @@
             </div>
         </div>
 
-
         <div class="j-section-2 nzr-calc-section-2">
             <div class="nzr-calc-section-2__text">
-                Пожалуйста, дайте ответы на вопросы:
+                <span data-lang-element="ua">Будь ласка, дайте відповіді на питання:</span>
+                <span data-lang-element="ru">Пожалуйста, дайте ответы на вопросы:</span>
             </div>
 
             <form class="nzr-calc-form" action="#">
                 <div class="nzr-calc-form__row">
                     <div class="nzr-calc-form__input-title">
-                        Ваше Имя
+                        <span data-lang-element="ua">Ваше ім'я</span>
+                        <span data-lang-element="ru">Ваше Имя</span>
                     </div>
 
                     <div class="nzr-calc-form__input-filed">
-                        <input class="j-form-name" type="text" name="name" placeholder="Имя">
+                        <input class="j-form-name" type="text" name="name" placeholder="">
                     </div>
                 </div>
 
                 <div class="nzr-calc-form__row">
                     <div class="nzr-calc-form__input-title">
-                        Стоимость квартиры вашей мечты (в $) ?
+                        <span data-lang-element="ua">Вартість квартири вашої мрії (в $)?</span>
+                        <span data-lang-element="ru">Стоимость квартиры вашей мечты (в $) ?</span>
                     </div>
 
                     <div class="nzr-calc-form__input-filed">
@@ -77,7 +95,8 @@
                 <div class="j-group-1">
                     <div class="nzr-calc-form__row">
                         <div class="nzr-calc-form__input-title">
-                            Какую сумму вы можете вносить каждый месяц на покупку квартиры своей мечты (в $) ?
+                            <span data-lang-element="ua">Яку суму ви можете вносити щомісяця на покупку квартири своєї мрії (в $)?</span>
+                            <span data-lang-element="ru">Какую сумму вы можете вносить каждый месяц на покупку квартиры своей мечты (в $) ?</span>
                         </div>
 
                         <div class="nzr-calc-form__input-filed">
@@ -87,7 +106,8 @@
 
                     <div class="nzr-calc-form__row">
                         <div class="j-count-1 nzr-calc-button">
-                            Рассчитать
+                            <span data-lang-element="ua">Розрахувати</span>
+                            <span data-lang-element="ru">Рассчитать</span>
                         </div>
                     </div>
                 </div>
@@ -95,17 +115,19 @@
                 <div class="j-group-2">
                     <div class="nzr-calc-form__row">
                         <div class="nzr-calc-form__input-title">
-                            За сколько лет вы хотите приобрести квартиру своей мечты (в годах) ?
+                            <span data-lang-element="ua">За скільки років ви хочете придбати квартиру своєї мрії (в роках)?</span>
+                            <span data-lang-element="ru">За сколько лет вы хотите приобрести квартиру своей мечты (в годах) ?</span>
                         </div>
 
                         <div class="nzr-calc-form__input-filed">
-                            <input class="j-form-period" type="number" name="investments" placeholder="лет">
+                            <input class="j-form-period" type="number" name="investments" placeholder="">
                         </div>
                     </div>
 
                     <div class="nzr-calc-form__row">
                         <div class="j-count-2 nzr-calc-button">
-                            Рассчитать
+                            <span data-lang-element="ua">Розрахувати</span>
+                            <span data-lang-element="ru">Рассчитать</span>
                         </div>
                     </div>
                 </div>
@@ -114,31 +136,56 @@
 
         <div class="j-section-3 nzr-calc-section-3">
             <div class="j-group-1 nzr-calc-section-3__text">
-                <span class="j-text-name"></span>, при внесении ежемесячно по <span class="j-text-investments"></span>$ вы приобретёте квартиру своей мечты за <span class="j-text-period"></span>
+                <span data-lang-element="ua"><strong class="j-text-name"></strong>, при внесенні щомісяця по <strong class="j-text-investments"></strong>$ ви придбаєте квартиру своєї мрії за <strong class="j-text-period"></strong></span>
+
+                <span data-lang-element="ru"><strong class="j-text-name"></strong>, при внесении ежемесячно по <strong class="j-text-investments"></strong>$ вы приобретёте квартиру своей мечты за <strong class="j-text-period"></strong></span>
             </div>
 
             <div class="j-group-2 nzr-calc-section-3__text">
-                <span class="j-text-name"></span>, чтобы купить квартиру вашей мечты за <span class="j-text-period"></span> вам необходимо ежегодно вносить по <span class="j-text-investments"></span> $
+                <span data-lang-element="ua"><strong class="j-text-name"></strong>, щоб купити квартиру вашої мрії за <strong class="j-text-period"></strong> вам необхідно щорічно вносити по <strong class="j-text-investments"></strong> $</span>
+                <span data-lang-element="ru"><strong class="j-text-name"></strong>, чтобы купить квартиру вашей мечты за <strong class="j-text-period"></strong> вам необходимо ежегодно вносить по <strong class="j-text-investments"></strong> $</span>
             </div>
 
 
             <div class="nzr-calc-section-3__text">
-                С накоплениями по годам вы можете ознакомиться в таблице (таблица показывает, что происходит в каждый год):
+                <span data-lang-element="ua">З накопиченнями по роках ви можете ознайомитися в таблиці (таблиця показує що відбувається з накопиченнями кожного року):</span>
+                <span data-lang-element="ru">С накоплениями по годам вы можете ознакомиться в таблице (таблица показывает, что происходит в каждый год):</span>
             </div>
 
             <div class="nzr-calc-table-helper">
-                <div class="nzr-calc-table-helper__text">Свайпай таблицу</div>
+                <div class="nzr-calc-table-helper__text">
+                    <span data-lang-element="ua">Свайпай таблицю</span>
+                    <span data-lang-element="ru">Свайпай таблицу</span>
+                    </div>
                 <img class="nzr-calc-table-helper__img" src="img/swipe-helper.gif" alt="">
             </div>
             <table class="nzr-calc-table">
                 <thead>
                 <tr>
-                    <td>Год</td>
-                    <td>Внесено в месяц</td>
-                    <td>Внесено в год</td>
-                    <td>Заработано</td>
-                    <td>Проценты (10%)</td>
-                    <td>Накоплено</td>
+                    <td>
+                        <span data-lang-element="ua">Рік</span>
+                        <span data-lang-element="ru">Год</span>
+                    </td>
+                    <td>
+                        <span data-lang-element="ua">Внесено за місяць</span>
+                        <span data-lang-element="ru">Внесено в месяц</span>
+                    </td>
+                    <td>
+                        <span data-lang-element="ua">Внесено за рік</span>
+                        <span data-lang-element="ru">Внесено в год</span>
+                    </td>
+                    <td>
+                        <span data-lang-element="ua">Зароблено</span>
+                        <span data-lang-element="ru">Заработано</span>
+                    </td>
+                    <td>
+                        <span data-lang-element="ua">Відсотки (10%)</span>
+                        <span data-lang-element="ru">Проценты (10%)</span>
+                    </td>
+                    <td>
+                        <span data-lang-element="ua">Накопичено</span>
+                        <span data-lang-element="ru">Накоплено</span>
+                    </td>
                 </tr>
                 </thead>
                 <tbody class="j-table-body">
@@ -147,22 +194,34 @@
 
 
             <div class="nzr-calc-section-3__text">
-                Где,
+                <span data-lang-element="ua">Де,</span>
+                <span data-lang-element="ru">Где,</span>
             </div>
 
             <div class="nzr-calc-section-3__text">
-                <span>*Внесено в год</span> - деньги, которые вы внесете в течение года, выплачивая новые метры равными частями каждый месяц<br/>
-                <span>*Заработано</span> - каждый раз вы вносите деньги в дом, который находится на стадии фундамента и метр стоит дешевле. За год каждый метр дорожает минимум на 100 дол от начальной стоимости<br/>
-                <span>*Проценты</span> - каждый квадратный метр после строительства и ремонта сдается в аренду и приносит от 10 процентов годовых в валюте каждый год<br/>
-                <span>*Накоплено</span> - общая сумма денег каждый год, которая накапливается по 3 направлениях
+                <span data-lang-element="ua">
+                    <strong>*Внесено за рік</strong> - гроші, які ви внесете протягом року, виплачуючи нові метри рівними частинами щомісяця<br/>
+                    <strong>*Зароблено</strong> - кожен раз ви вносите гроші в будинок, який знаходиться на стадії фундаменту і метр коштує дешевше. За рік кожен метр дорожчає мінімум на 100 дол від початкової вартості<br/>
+                    <strong>*Відсотки</strong> - кожен квадратний метр після будівництва і ремонту здається в оренду і приносить від 10 відсотків річних у валюті щороку<br/>
+                    <strong>*Накопичено</strong> - загальна сума грошей щороку, яка накопичується по 3-х напрямках
+                </span>
+                <span data-lang-element="ru">
+                    <strong>*Внесено в год</strong> - деньги, которые вы внесете в течение года, выплачивая новые метры равными частями каждый месяц<br/>
+                    <strong>*Заработано</strong> - каждый раз вы вносите деньги в дом, который находится на стадии фундамента и метр стоит дешевле. За год каждый метр дорожает минимум на 100 дол от начальной стоимости<br/>
+                    <strong>*Проценты</strong> - каждый квадратный метр после строительства и ремонта сдается в аренду и приносит от 10 процентов годовых в валюте каждый год<br/>
+                    <strong>*Накоплено</strong> - общая сумма денег каждый год, которая накапливается по 3 направлениях
+                </span>
+
             </div>
 
             <div class="nzr-calc-section-3__buttons">
                 <div class="j-repeat nzr-calc-button">
-                    Рассчитать еще раз по другим данным
+                    <span data-lang-element="ua">Розрахувати ще раз за іншими даними</span>
+                    <span data-lang-element="ru">Рассчитать еще раз по другим данным</span>
                 </div>
                 <div class="j-open-contact-form nzr-calc-button">
-                    Связаться с менеджером для уточнения деталей
+                    <span data-lang-element="ua">Зв'язатися з менеджером для уточнення деталей</span>
+                    <span data-lang-element="ru">Связаться с менеджером для уточнения деталей</span>
                 </div>
             </div>
         </div>
@@ -182,5 +241,6 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/calc.js"></script>
+    <script src="js/nzr-lang.js"></script>
 </body>
 </html>
