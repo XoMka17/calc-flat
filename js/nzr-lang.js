@@ -5,7 +5,7 @@ $('.j-nzr-lang li').each(function (key) {
 });
 
 // Set default language
-var current_language = getCookie('nzr-lang') ? getCookie('nzr-lang') : 'ua';
+var current_language = getCookie('nzr-lang') ? getCookie('nzr-lang') : 'ru';
 changeLang(current_language);
 
 // Change language, if user click
